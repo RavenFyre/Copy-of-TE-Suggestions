@@ -1,0 +1,42 @@
+{
+  "panel_id": 1402765057967788093,
+  "last_id": 3,
+  "suggestions": [
+    {
+      "id": 1,
+      "message_id": 1125415939853275246,
+      "author_id": 412826058321166348,
+      "content": "Give penalty to teams after they give a certain amount (3 or so) of false reports/disputes with no proof",
+      "votes": {
+        "<:Tick:937007799903338538>": [],
+        "<:Cross:937007827531235388>": []
+      },
+      "status": "approved",
+      "staff_response": "While this has always been a rule in our community, we acknowledge that there have been some challenges with our system in effectively enforcing it. To address this, we are implementing stricter penalties for teams that submit multiple false reports or disputes without providing valid evidence."
+    },
+    {
+      "id": 2,
+      "message_id": 1391477541772201994,
+      "author_id": 343403779770548226,
+      "content": "Prizes for the 1-3 teams with the most matches played/ most wins etc",
+      "votes": {
+        "<:Tick:937007799903338538>": [],
+        "<:Cross:937007827531235388>": []
+      },
+      "status": "pending",
+      "staff_response": null
+    },
+    {
+      "id": 3,
+      "message_id": 1394242367212490822,
+      "author_id": 1111444053310050384,
+      "content": "I think they sould remove the cooldown, and wait to see if they get another good admin...",
+      "votes": {
+        "<:Tick:937007799903338538>": [],
+        "<:Cross:937007827531235388>": []
+      },
+      "status": "approved",
+      "staff_response": "Cooldowns have been removed on a trial basis only; subject to change based on player feedback & ladder monitoring. A new rule regarding rematches has been implemented, effective immediately, to mitigate the removal of cooldowns and allows one team to cancel if they do not wish to rematch the same team within 1 hour of the previous match's no-show time."
+    }
+  ]
+}
