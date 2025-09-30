@@ -9,8 +9,8 @@ from discord.ext import commands
 from utils.suggestion_management import load_data, save_data
 
 suggestions_channel = 1390343546791268507  # TE Server - #suggestions channel
-tick_emoji = "<:Tick:937007799903338538>" 
-cross_emoji = "<:Cross:937007827531235388>" 
+tick_emoji = "<:Tick:1422628423620366469>" 
+cross_emoji = "<:Cross:1422628421913149440>" 
 
 class Events(commands.Cog):
     def __init__(self, bot):

@@ -15,8 +15,8 @@ from cogs.suggestions import Suggestions
 suggestions_channel = 1390343546791268507  # TE Server - #suggestions channel
 reviewed_suggestions_channel = 1390343546791268507 # TE Server - #suggestions channel - If this channel is different from suggestions_channel, please review the code in the /approve and /deny slash commands.
 bot_id = 981854054760185927 # The ID of the bot on Discord
-tick_emoji = "<:Tick:937007799903338538>" # emoji from TE Discord
-cross_emoji = "<:Cross:937007827531235388>" # emoji from TE Discord
+tick_emoji = "<:Tick:1422628423620366469>" # emoji from TE Discord
+cross_emoji = "<:Cross:1422628421913149440>" # emoji from TE Discord
 
 # Admin controls cog
 class AdminControls(commands.Cog):

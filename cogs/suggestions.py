@@ -13,8 +13,10 @@ from utils.suggestion_management import load_data, save_data, get_next_id, get_p
 suggestions_channel = 1390343546791268507  # TE Server - #suggestions channel
 reviewed_suggestions_channel = 1390343546791268507 # TE Server - #suggestions channel - If this channel is different from suggestions_channel, please review the code in the /approve and /deny slash commands.
 bot_id = 981854054760185927 # The ID of the bot on Discord
-tick_emoji = "<:Tick:937007799903338538>" # emoji from TE Discord
-cross_emoji = "<:Cross:937007827531235388>" # emoji from TE Discord
+tick_emoji = "<:Tick:1422628423620366469>" # emoji from TE Discord
+tick_emoji_id = 1422628423620366469
+cross_emoji = "<:Cross:1422628421913149440>" # emoji from TE Discord
+cross_emoji_id = 1422628421913149440
 
 # Suggestions cog
 class Suggestions(commands.Cog):
@@ -71,8 +73,8 @@ class Suggestions(commands.Cog):
 
                 # Sends the suggestion message
                 bot_message = await channel.send(embed=embed)
-                tick_custom_emoji = self.bot.get_emoji(937007799903338538)
-                cross_custom_emoji = self.bot.get_emoji(937007827531235388)
+                tick_custom_emoji = self.bot.get_emoji(tick_emoji_id)
+                cross_custom_emoji = self.bot.get_emoji(cross_emoji_id)
                 await bot_message.add_reaction(tick_custom_emoji)
                 await bot_message.add_reaction(cross_custom_emoji)
 
