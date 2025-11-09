@@ -55,28 +55,47 @@ class Reminders(commands.Cog):
         await self.bot.wait_until_ready()
 
     # ---------- SLASH COMMANDS ----------
-    @app_commands.command(name="add_reminder", description="Add a reminder (GMT+8)")
-    async def add_reminder(self, interaction: discord.Interaction, time: str, message: str):
-        """Slash command: /add_reminder time:HH:MM message:Your message"""
+    @app_commands.command(name="add_reminder", description="Add a reminder (time is GMT+8)")
+    @app_commands.describe(
+        time="Time in HH:MM (24h GMT+8)",
+        message="What should the bot say?",
+        mention="(Optional) Mention a user or role"
+    )
+    async def add_reminder(
+        self,
+        interaction: discord.Interaction,
+        time: str,
+        message: str,
+        mention: discord.Role | discord.User | None = None,
+    ):
+        """Slash command: /add_reminder time:HH:MM message:'text' mention:@user_or_role"""
+    
+        # Validate time format
         try:
             datetime.strptime(time, "%H:%M")
         except ValueError:
             return await interaction.response.send_message(
-                "❌ Time must be in **HH:MM (24h format)**",
+                "❌ Time must be in **HH:MM (24h format, GMT+8)**",
                 ephemeral=True
             )
-
+    
+        # Store message including mention (if supplied)
+        final_message = f"{mention.mention}\n{message}" if mention else message
+    
         async with aiosqlite.connect("reminders.db") as db:
             await db.execute(
                 "INSERT INTO reminders (guild_id, channel_id, time, message) VALUES (?, ?, ?, ?)",
-                (interaction.guild_id, interaction.channel_id, time, message)
+                (interaction.guild_id, interaction.channel_id, time, final_message)
             )
             await db.commit()
-
+    
         await interaction.response.send_message(
-            f"✅ Reminder added for **{time} GMT+8**:\n> {message}"
+            f"✅ Reminder added for **{time} GMT+8**\n"
+            f"Message: `{message}`"
+            + (f"\nWill mention: {mention.mention}" if mention else "")
         )
 
+    
     @app_commands.command(name="list_reminders", description="List all reminders for this server")
     async def list_reminders(self, interaction: discord.Interaction):
         async with aiosqlite.connect("reminders.db") as db:
