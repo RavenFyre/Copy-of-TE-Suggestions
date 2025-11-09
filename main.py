@@ -31,6 +31,7 @@ async def load_cogs():
     await bot.load_extension("cogs.suggestions")
     await bot.load_extension("cogs.events")
     await bot.load_extension("cogs.admin_controls")
+    await bot.load_extension("cogs.fis_pay_reminders")
 
 # Run bot
 async def main():
@@ -42,4 +43,5 @@ async def main():
 # This code runs only if main.py is executed directly.
 if __name__ == "__main__":
     import asyncio
+
     asyncio.run(main())
